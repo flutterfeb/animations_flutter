@@ -20,23 +20,23 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   BoxShape boxShape = BoxShape.rectangle;
   bool isCircle;
 
-  @override
-  void initState() {
-    super.initState();
-    height = 100.0;
-    width = 100.0;
-    color = Colors.blue;
-    isCircle = false;
-  }
-
-  _toggle() {
-    setState(() {
-      boxShape = isCircle ? BoxShape.circle : BoxShape.rectangle;
-      height = isCircle ? 400.0 : 100.0;
-      width = isCircle ? 400.0 : 100.0;
-      color = isCircle ? Colors.red : Colors.blue;
-    });
-  }
+//  @override
+//  void initState() {
+//    super.initState();
+//    height = 100.0;
+//    width = 100.0;
+//    color = Colors.blue;
+//    isCircle = false;
+//  }
+//
+//  _toggle() {
+//    setState(() {
+//      boxShape = isCircle ? BoxShape.circle : BoxShape.rectangle;
+//      height = isCircle ? 400.0 : 100.0;
+//      width = isCircle ? 400.0 : 100.0;
+//      color = isCircle ? Colors.red : Colors.blue;
+//    });
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,21 +45,21 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: new Text(widget.title),
       ),
       body: new Center(
-        child: AnimatedContainer(
-          curve: Curves.fastOutSlowIn,
-          duration: duration,
-          width: width,
-          height: height,
-          decoration: BoxDecoration(
-            color: color,
-//            shape: boxShape,
-          ),
-        ),
+//        child: AnimatedContainer(
+//          curve: Curves.fastOutSlowIn,
+//          duration: duration,
+//          width: width,
+//          height: height,
+//          decoration: BoxDecoration(
+//            color: color,
+////            shape: boxShape,
+//          ),
+//        ),
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
-          isCircle = !isCircle;
-          _toggle();
+//          isCircle = !isCircle;
+//          _toggle();
         },
         tooltip: 'Animate',
         child: new Icon(Icons.add),
