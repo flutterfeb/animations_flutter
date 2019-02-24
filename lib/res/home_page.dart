@@ -21,42 +21,42 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
-      body: new  Stack(
-        children: <Widget>[
-
-          Align(
-            alignment: Alignment.topRight,
-            child: Hero(
-              tag: 'flutter logo',
-              child: FlutterLogo(
-                size: 100.0,
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomLeft,
-            child: Hero(
-              tag: 'some logo',
-              child: Icon(
-                MdiIcons.firebase,
-                size: 100.0,
-                color: Colors.yellow,
-              ),
-            ),
-          ),
-        ],
-      ),
+//      body: new  Stack(
+//        children: <Widget>[
+//
+//          Align(
+//            alignment: Alignment.topRight,
+//            child: Hero(
+//              tag: 'flutter logo',
+//              child: FlutterLogo(
+//                size: 100.0,
+//              ),
+//            ),
+//          ),
+//          Align(
+//            alignment: Alignment.bottomLeft,
+//            child: Hero(
+//              tag: 'some logo',
+//              child: Icon(
+//                MdiIcons.firebase,
+//                size: 100.0,
+//                color: Colors.yellow,
+//              ),
+//            ),
+//          ),
+//        ],
+//      ),
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (BuildContext context) {
-                return SecondaryPage(
-                  title: 'Secondary Page',
-                );
-              },
-            ),
-          );
+//          Navigator.of(context).push(
+//            MaterialPageRoute(
+//              builder: (BuildContext context) {
+//                return SecondaryPage(
+//                  title: 'Secondary Page',
+//                );
+//              },
+//            ),
+//          );
         },
         tooltip: 'Animate',
         child: new Icon(Icons.add),
