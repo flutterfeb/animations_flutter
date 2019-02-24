@@ -1,5 +1,6 @@
 import 'package:animations/res/secondary_page.dart';
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 const Duration duration = Duration(
   milliseconds: 600,
@@ -20,13 +21,39 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
-      body: new Center(),
+      body: new  Stack(
+        children: <Widget>[
+
+          Align(
+            alignment: Alignment.topRight,
+            child: Hero(
+              tag: 'flutter logo',
+              child: FlutterLogo(
+                size: 100.0,
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomLeft,
+            child: Hero(
+              tag: 'some logo',
+              child: Icon(
+                MdiIcons.firebase,
+                size: 100.0,
+                color: Colors.yellow,
+              ),
+            ),
+          ),
+        ],
+      ),
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (BuildContext context) {
-                return SecondaryPage(title: 'Secondary Page',);
+                return SecondaryPage(
+                  title: 'Secondary Page',
+                );
               },
             ),
           );
