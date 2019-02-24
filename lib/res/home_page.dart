@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 const Duration duration = Duration(
   milliseconds: 600,
 );
@@ -14,29 +13,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-  double height;
-  double width;
-  Color color;
-  BoxShape boxShape = BoxShape.rectangle;
-  bool isCircle;
-
-  @override
-  void initState() {
-    super.initState();
-    height = 100.0;
-    width = 100.0;
-    color = Colors.blue;
-    isCircle = false;
-  }
-
-  _toggle() {
-    setState(() {
-      boxShape = isCircle ? BoxShape.circle : BoxShape.rectangle;
-      height = isCircle ? 400.0 : 100.0;
-      width = isCircle ? 400.0 : 100.0;
-      color = isCircle ? Colors.red : Colors.blue;
-    });
-  }
+//  bool isFirstVisible;
+//
+//  @override
+//  void initState() {
+//    super.initState();
+//
+//    isFirstVisible = true;
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,21 +29,36 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: new Text(widget.title),
       ),
       body: new Center(
-        child: AnimatedContainer(
-          curve: Curves.fastOutSlowIn,
-          duration: duration,
-          width: width,
-          height: height,
-          decoration: BoxDecoration(
-            color: color,
-//            shape: boxShape,
-          ),
-        ),
+//        child: AnimatedCrossFade(
+////          layoutBuilder: (Widget firstChild, Key firstChildKey, Widget secondChild, Key secondChildKey,){
+////
+////            return Stack(
+////              alignment: Alignment.center,
+////              children: <Widget>[
+////                firstChild,
+////                secondChild,
+////              ],
+////            );
+////
+////          },
+//            firstChild: FlutterLogo(
+//              size: 100.0,
+//            ),
+//            secondChild: Container(
+//              color: Colors.purple,
+//              height: 200.0,
+//              width: 150.0,
+//            ),
+//            crossFadeState: isFirstVisible
+//                ? CrossFadeState.showFirst
+//                : CrossFadeState.showSecond,
+//            duration: duration,
+//        ),
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
-          isCircle = !isCircle;
-          _toggle();
+//          isFirstVisible = !isFirstVisible;
+//          setState(() {});
         },
         tooltip: 'Animate',
         child: new Icon(Icons.add),
