@@ -1,3 +1,4 @@
+import 'package:animations/res/secondary_page.dart';
 import 'package:flutter/material.dart';
 
 const Duration duration = Duration(
@@ -13,52 +14,22 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-//  bool isFirstVisible;
-//
-//  @override
-//  void initState() {
-//    super.initState();
-//
-//    isFirstVisible = true;
-//  }
-
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
-      body: new Center(
-//        child: AnimatedCrossFade(
-////          layoutBuilder: (Widget firstChild, Key firstChildKey, Widget secondChild, Key secondChildKey,){
-////
-////            return Stack(
-////              alignment: Alignment.center,
-////              children: <Widget>[
-////                firstChild,
-////                secondChild,
-////              ],
-////            );
-////
-////          },
-//            firstChild: FlutterLogo(
-//              size: 100.0,
-//            ),
-//            secondChild: Container(
-//              color: Colors.purple,
-//              height: 200.0,
-//              width: 150.0,
-//            ),
-//            crossFadeState: isFirstVisible
-//                ? CrossFadeState.showFirst
-//                : CrossFadeState.showSecond,
-//            duration: duration,
-//        ),
-      ),
+      body: new Center(),
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
-//          isFirstVisible = !isFirstVisible;
-//          setState(() {});
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) {
+                return SecondaryPage(title: 'Secondary Page',);
+              },
+            ),
+          );
         },
         tooltip: 'Animate',
         child: new Icon(Icons.add),
