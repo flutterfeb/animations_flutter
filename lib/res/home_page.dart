@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 const Duration duration = Duration(
@@ -14,35 +13,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-
   //TODO: [2] Declare and initialize animation and controller
-  // {Hint: DecoratedBoxTransition will take animation of type Decoration}
-//  Animation<Decoration> animation;
+  // {Hint: FadeTransition will take animation of type double for its opacity}
+//  Animation<double> animation;
 //  AnimationController controller;
-
+//
 //  @override
 //  void initState() {
 //    super.initState();
 //
 //    controller = AnimationController(vsync: this, duration: duration)
 //      ..addListener(() => setState(() {}));
-//    animation = DecorationTween(
-//            begin: BoxDecoration(
-//              color: Colors.white,
-//              borderRadius: BorderRadius.circular(30),
-//              boxShadow: <BoxShadow>[
-//                BoxShadow(color: Colors.black54, blurRadius: 30, spreadRadius: 15),
-//                BoxShadow(color: Colors.blue, blurRadius: 15, spreadRadius: 7),
-//              ],
-//            ),
-//            end: BoxDecoration(
-//              color: Colors.white,
-//              borderRadius: BorderRadius.circular(0.0),
-//              boxShadow: <BoxShadow>[
-//                BoxShadow(color: Colors.blue, blurRadius: 15, spreadRadius: 7),
-//              ]
-//            ),)
-//        .animate(controller);
+//    animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
 //  }
 
   @override
@@ -53,19 +35,19 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: new Text(widget.title),
       ),
       body: Center(
-//TODO:[3] give the DecoratedBoxTransition its decoration and child
-        //TODO:[1] Bring in the DecoratedBoxTransition
-//        child: DecoratedBoxTransition(
-////          position: DecorationPosition.background,
-////          decoration: animation,
+//TODO:[3] give the FadeTransition its decoration and child
+        //TODO:[1] Time for FadeTransition
+//        child: FadeTransition(
+////          opacity: animation,
 ////          child: FlutterLogo(
+////            style: FlutterLogoStyle.stacked,
 ////            size: 200,
 ////          ),
 //        ),
       ),
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
-//         controller.isCompleted?controller.reverse():controller.forward();
+//          controller.isCompleted ? controller.reverse() : controller.forward();
         },
         tooltip: 'Animate',
         child: new Icon(Icons.play_arrow),
