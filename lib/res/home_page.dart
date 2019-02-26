@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Duration duration = Duration(
-  milliseconds: 600,
+  milliseconds: 700,
 );
 
 class MyHomePage extends StatefulWidget {
@@ -14,22 +14,29 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   //TODO: [2] Declare and initialize animation and controller
-  // {Hint: PositionedTransition will take animation of type RelativeRect and should have Stack as a parent}
-//  Animation<RelativeRect> animation;
-//  AnimationController controller;
-//
-//  @override
-//  void initState() {
-//    super.initState();
-//
-//    controller = AnimationController(vsync: this, duration: duration)
-//      ..addListener(() => setState(() {}));
-//
-//    animation = RelativeRectTween(
-//      begin: RelativeRect.fromLTRB(0, 0, 300, 300),
-//      end: RelativeRect.fromLTRB(30, 30, 30, 30),
-//    ).chain(CurveTween(curve: Curves.elasticInOut)).animate(controller);
-//  }
+  // {Hint: RotationTransition will take animation of type double for the turns}
+  Animation<double> animation;
+  AnimationController controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    controller = AnimationController(vsync: this, duration: duration)
+      ..addListener(() => setState(() {}));
+//Tip: you may also give this
+//    animation = CurvedAnimation(parent: controller, curve: Curves.elasticOut);
+    animation = Tween<double>(begin: -0.1, end: 0.1).animate(controller);
+    controller.forward();
+    controller.addStatusListener((AnimationStatus status) {
+      if (status == AnimationStatus.completed) {
+        controller.reverse();
+      }
+      if (status == AnimationStatus.dismissed) {
+        controller.forward();
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,23 +46,32 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: new Text(widget.title),
       ),
       body: Center(
-//TODO:[3] give the PositionedTransition its rect and child
-// TODO:[1] Have your PositionedTransition
+//TODO:[3] give the RotationTransition its turns, child and alignment
+// TODO:[1] Have your RotationTransition
         child: Stack(
           children: <Widget>[
-//            PositionedTransition(
-////              rect: animation,
-////              child: FlutterLogo(),
-//            ),
+            RotationTransition(
+              turns: animation,
+              alignment: Alignment(0, -1),
+              child: Container(
+                height: 300,
+                child: Column(
+                  children: <Widget>[
+                    Expanded(
+                      child: Container(
+                        width: 2,
+                        color: Colors.black,
+                      ),
+                    ),
+                    FlutterLogo(
+                      size: 150,
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: () {
-//          controller.isCompleted ? controller.reverse() : controller.forward();
-        },
-        tooltip: 'Animate',
-        child: new Icon(Icons.play_arrow),
       ),
     );
   }
