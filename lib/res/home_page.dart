@@ -14,20 +14,20 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   //TODO: [2] Declare and initialize animation and controller
-  // {Hint: SizeTransition will take animation of type offsets}
-  Animation<Offset> animation;
-  AnimationController controller;
+  // {Hint: SlideTransition will take animation of type offsets}
+//  Animation<Offset> animation;
+//  AnimationController controller;
 
-  @override
-  void initState() {
-    super.initState();
-
-    controller = AnimationController(vsync: this, duration: duration)
-      ..addListener(() => setState(() {}));
-    animation = Tween<Offset>(begin: Offset(0.5, 1), end: Offset(-1.5, 0))
-        .chain(CurveTween(curve: Curves.elasticIn))
-        .animate(controller);
-  }
+//  @override
+//  void initState() {
+//    super.initState();
+//
+//    controller = AnimationController(vsync: this, duration: duration)
+//      ..addListener(() => setState(() {}));
+//    animation = Tween<Offset>(begin: Offset(0.5, 1), end: Offset(-1.5, 0))
+//        .chain(CurveTween(curve: Curves.elasticIn))
+//        .animate(controller);
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,18 +39,18 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       body: Center(
 //TODO:[3] give the SlideTransition its properties
 // TODO:[1] Time to Slide
-        child: SlideTransition(
-          position: animation,
-          textDirection: TextDirection.rtl,
-          transformHitTests: true,
-          child: FlutterLogo(
-            size: 200,
+//        child: SlideTransition(
+////          position: animation,
+////          textDirection: TextDirection.rtl,
+////          transformHitTests: true,
+////          child: FlutterLogo(
+////            size: 200,
+////          ),
+//        ),
           ),
-        ),
-      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          controller.isCompleted ? controller.reverse() : controller.forward();
+//          controller.isCompleted ? controller.reverse() : controller.forward();
         },
         child: Icon(Icons.play_arrow),
       ),
