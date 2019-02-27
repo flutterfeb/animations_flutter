@@ -14,7 +14,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   //TODO: [2] Declare and initialize animation and controller
-  // {Hint: ScaleTransition will take animation of type double to scale its child}
+  // {Hint: SizeTransition will take animation of type double to change the sizeFactor}
 //  Animation<double> animation;
 //  AnimationController controller;
 //
@@ -25,9 +25,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //    controller = AnimationController(vsync: this, duration: duration)
 //      ..addListener(() => setState(() {}));
 ////Tip: you may also give this a try
-//    animation = CurvedAnimation(parent: controller, curve: Curves.elasticOut);
-//    //Tip: not a good option to use it as it will go from 0-1 unless if you wish to tweak the begin & end
-////    animation = Tween<double>(begin: 0, end: 1).animate(controller);
+////    animation = CurvedAnimation(parent: controller, curve: Curves.easeOut);
+//// Tip: not a good option to use it as it will go from 0-1 unless if you wish to tweak the begin & end
+//    animation = Tween<double>(begin: 0.2, end: 0.5).animate(controller);
 //  }
 
   @override
@@ -38,11 +38,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: new Text(widget.title),
       ),
       body: Center(
-//TODO:[3] give the ScaleTransition its scale, child and alignment
-// TODO:[1] Time to Scale
-//        child: ScaleTransition(
-////          alignment: Alignment.centerLeft,
-////          scale: animation,
+//TODO:[3] give the SizeTransition its properties
+// TODO:[1] Time to Size
+//        child: SizeTransition(
+////          axis: Axis.vertical,
+////          axisAlignment: 0,
+////          sizeFactor: animation,
 ////          child: FlutterLogo(
 ////            size: 200,
 ////          ),
