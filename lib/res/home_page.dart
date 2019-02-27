@@ -13,7 +13,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-
   //TODO:[2] Declare required variables
 
 //  bool isBefore = true;
@@ -42,12 +41,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //          child: Text('CookyTech'),
 //          style: isBefore ? beforeStyle : afterStyle,
 //          duration: duration,
-//          curve: Curves.linear,
+//          curve: Curves.linear, <-you don't need it actually
 //        ),
-      ),
+          ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //TODO:[3] SetState and change the considerate variable
+          //TODO:[3] change the considerate variable(s) and set state
 //          isBefore = !isBefore;
 //          setState(() {});
         },
