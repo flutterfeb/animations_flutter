@@ -40,17 +40,16 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      backgroundColor: Colors.white,
-      appBar: new AppBar(
-        title: new Text(widget.title),
-      ),
-      body: Center(
-//TODO:[3] give the RotationTransition its turns, child and alignment
-// TODO:[1] Have your RotationTransition
-        child: Stack(
-          children: <Widget>[
-//            RotationTransition(
+    return new Scaffold
+    (
+        backgroundColor: Colors.white,
+    appBar: new AppBar(
+    title: new Text(widget.title),
+    ),
+    body: Center(
+//TODO:[3] give the RotateTransition its turns, child and alignment
+// TODO:[1] Bring in RotateTransition
+//    child: RotationTransition(
 ////              turns: animation,
 ////              alignment: Alignment(0, -1),
 ////              child: Container(
@@ -58,6 +57,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 ////                child: Column(
 ////                  children: <Widget>[
 ////                    Expanded(
+
 ////                      child: Container(
 ////                        width: 2,
 ////                        color: Colors.black,
@@ -70,8 +70,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 ////                ),
 ////              ),
 //            ),
-          ],
-        ),
       ),
     );
   }
