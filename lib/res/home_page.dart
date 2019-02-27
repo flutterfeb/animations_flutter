@@ -14,29 +14,21 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   //TODO: [2] Declare and initialize animation and controller
-  // {Hint: RotationTransition will take animation of type double for the turns}
-//  Animation<double> animation;
-//  AnimationController controller;
-//
-//  @override
-//  void initState() {
-//    super.initState();
-//
-//    controller = AnimationController(vsync: this, duration: duration)
-//      ..addListener(() => setState(() {}));
-////Tip: you may also give this a try
-////    animation = CurvedAnimation(parent: controller, curve: Curves.elasticOut);
-//    animation = Tween<double>(begin: -0.1, end: 0.1).animate(controller);
-//    controller.forward();
-//    controller.addStatusListener((AnimationStatus status) {
-//      if (status == AnimationStatus.completed) {
-//        controller.reverse();
-//      }
-//      if (status == AnimationStatus.dismissed) {
-//        controller.forward();
-//      }
-//    });
-//  }
+  // {Hint: ScaleTransition will take animation of type double to scale its child}
+  Animation<double> animation;
+  AnimationController controller;
+
+  @override
+  void initState() {
+    super.initState();
+
+    controller = AnimationController(vsync: this, duration: duration)
+      ..addListener(() => setState(() {}));
+//Tip: you may also give this a try
+    animation = CurvedAnimation(parent: controller, curve: Curves.elasticOut);
+    //Tip: not a good option to use it as it will go from 0-1 unless if you wish to tweak the begin & end
+//    animation = Tween<double>(begin: 0, end: 1).animate(controller);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,32 +38,21 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: new Text(widget.title),
       ),
       body: Center(
-//TODO:[3] give the RotationTransition its turns, child and alignment
-// TODO:[1] Have your RotationTransition
-        child: Stack(
-          children: <Widget>[
-//            RotationTransition(
-////              turns: animation,
-////              alignment: Alignment(0, -1),
-////              child: Container(
-////                height: 300,
-////                child: Column(
-////                  children: <Widget>[
-////                    Expanded(
-////                      child: Container(
-////                        width: 2,
-////                        color: Colors.black,
-////                      ),
-////                    ),
-////                    FlutterLogo(
-////                      size: 150,
-////                    ),
-////                  ],
-////                ),
-////              ),
-//            ),
-          ],
+//TODO:[3] give the ScaleTransition its scale, child and alignment
+// TODO:[1] Time to Scale
+        child: ScaleTransition(
+          alignment: Alignment.centerLeft,
+          scale: animation,
+          child: FlutterLogo(
+            size: 200,
+          ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          controller.isCompleted ? controller.reverse() : controller.forward();
+        },
+        child: Icon(Icons.play_arrow),
       ),
     );
   }
