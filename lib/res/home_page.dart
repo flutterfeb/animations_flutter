@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //// Tip: not a good option to use it as it will go from 0-1 unless if you wish to tweak the begin & end
 //    animation = Tween<double>(begin: 0.2, end: 0.5).animate(controller);
 //  }
-+
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
