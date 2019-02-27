@@ -14,19 +14,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   //TODO:[2] Declare required variables
-
-//  bool isBefore = true;
-//
-//  TextStyle beforeStyle = TextStyle(
-//    color: Colors.black,
-//    fontSize: 40,
-//    fontWeight: FontWeight.bold,
-//  );
-//  TextStyle afterStyle = TextStyle(
-//    color: Colors.blue,
-//    fontSize: 50,
-//    fontWeight: FontWeight.w100,
-//  );
+//  bool isOpaque = true;
 
   @override
   Widget build(BuildContext context) {
@@ -35,19 +23,24 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
-      //TODO:[1] AnimatedDefaultTextStyle and set its property
       body: Center(
-//        child: AnimatedDefaultTextStyle(
-//          child: Text('CookyTech'),
-//          style: isBefore ? beforeStyle : afterStyle,
+          //TODO:[1] AnimatedOpacity and the properties
+//        child: AnimatedOpacity(
+//          opacity: isOpaque ? 1.0 : 0.4,
 //          duration: duration,
-//          curve: Curves.linear, <-you don't need it actually
+//          child: Text(
+//            'CookyTech',
+//            style: TextStyle(
+//              fontWeight: FontWeight.bold,
+//              fontSize: 20,
+//            ),
+//          ),
 //        ),
           ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //TODO:[3] change the considerate variable(s) and set state
-//          isBefore = !isBefore;
+          //TODO:[3] change what's needed to be and set the state
+//          isOpaque = !isOpaque;
 //          setState(() {});
         },
         child: Icon(Icons.play_arrow),
