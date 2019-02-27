@@ -13,21 +13,21 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
-  //TODO: [2] Declare and initialize animation and controller
-  // {Hint: SlideTransition will take animation of type offsets}
-//  Animation<Offset> animation;
-//  AnimationController controller;
 
-//  @override
-//  void initState() {
-//    super.initState();
+  //TODO:[2] Declare required variables
+
+//  bool isBefore = true;
 //
-//    controller = AnimationController(vsync: this, duration: duration)
-//      ..addListener(() => setState(() {}));
-//    animation = Tween<Offset>(begin: Offset(0.5, 1), end: Offset(-1.5, 0))
-//        .chain(CurveTween(curve: Curves.elasticIn))
-//        .animate(controller);
-//  }
+//  TextStyle beforeStyle = TextStyle(
+//    color: Colors.black,
+//    fontSize: 40,
+//    fontWeight: FontWeight.bold,
+//  );
+//  TextStyle afterStyle = TextStyle(
+//    color: Colors.blue,
+//    fontSize: 50,
+//    fontWeight: FontWeight.w100,
+//  );
 
   @override
   Widget build(BuildContext context) {
@@ -36,21 +36,20 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
+      //TODO:[1] AnimatedDefaultTextStyle and set its property
       body: Center(
-//TODO:[3] give the SlideTransition its properties
-// TODO:[1] Time to Slide
-//        child: SlideTransition(
-////          position: animation,
-////          textDirection: TextDirection.rtl,
-////          transformHitTests: true,
-////          child: FlutterLogo(
-////            size: 200,
-////          ),
+//        child: AnimatedDefaultTextStyle(
+//          child: Text('CookyTech'),
+//          style: isBefore ? beforeStyle : afterStyle,
+//          duration: duration,
+//          curve: Curves.linear,
 //        ),
-          ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-//          controller.isCompleted ? controller.reverse() : controller.forward();
+          //TODO:[3] SetState and change the considerate variable
+//          isBefore = !isBefore;
+//          setState(() {});
         },
         child: Icon(Icons.play_arrow),
       ),
