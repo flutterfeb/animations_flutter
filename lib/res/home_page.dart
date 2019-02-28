@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 const Duration duration = Duration(
-  milliseconds: 600,
+  milliseconds: 700,
 );
 
 class MyHomePage extends StatefulWidget {
@@ -21,6 +21,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
       appBar: new AppBar(
         title: new Text(widget.title),
       ),
+      //TODO:[1] Let me be your Hero, you can call me now
 //      body: new  Stack(
 //        children: <Widget>[
 //
@@ -46,6 +47,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //          ),
 //        ],
 //      ),
+      //TODO:[2] Your hero needs to fly, navigate to another screen
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
 //          Navigator.of(context).push(
@@ -59,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //          );
         },
         tooltip: 'Animate',
-        child: new Icon(Icons.add),
+        child: new Icon(Icons.play_arrow),
       ),
     );
   }
