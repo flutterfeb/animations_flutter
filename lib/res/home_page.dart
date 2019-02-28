@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 const Duration duration = Duration(
-  milliseconds: 600,
+  milliseconds: 700,
 );
 
 class MyHomePage extends StatefulWidget {
@@ -13,7 +13,11 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => new _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+class _MyHomePageState extends State<MyHomePage> {
+  
+  //TODO:[2]Declare and initialize required variables
+  //Tip:better to initialize in initState
+  
   double height;
   double width;
   Color color;
@@ -29,6 +33,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //    isCircle = false;
 //  }
 //
+  //TODO:[3] you will need a function to toggle states
 //  _toggle() {
 //    setState(() {
 //      boxShape = isCircle ? BoxShape.circle : BoxShape.rectangle;
@@ -45,6 +50,8 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: new Text(widget.title),
       ),
       body: new Center(
+        //TODO:[1] AnimatedContainer and its properties
+        
 //        child: AnimatedContainer(
 //          curve: Curves.fastOutSlowIn,
 //          duration: duration,
@@ -52,17 +59,18 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //          height: height,
 //          decoration: BoxDecoration(
 //            color: color,
-////            shape: boxShape,
+//            shape: boxShape,with Ticker
 //          ),
 //        ),
       ),
+      //TODO:[4] Trigger changes using FAB
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
 //          isCircle = !isCircle;
 //          _toggle();
         },
         tooltip: 'Animate',
-        child: new Icon(Icons.add),
+        child: new Icon(Icons.play_arrow),
       ),
     );
   }
