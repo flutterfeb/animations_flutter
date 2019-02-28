@@ -1,3 +1,6 @@
+//TODO:[3] Okay so you made the hero navigate but where is the page where it will 
+//         navigate to, you don't wanna fall in red sea of yellow errors.
+
 //import 'package:flutter/material.dart';
 //import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 //
