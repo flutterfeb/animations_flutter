@@ -1,7 +1,5 @@
 import 'package:animations/res/secondary_page.dart';
 import 'package:flutter/material.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
 const Duration duration = Duration(
   milliseconds: 700,
 );
@@ -22,43 +20,24 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: new Text(widget.title),
       ),
       //TODO:[1] Let me be your Hero, you can call me now
-//      body: new  Stack(
-//        children: <Widget>[
-//
-//          Align(
-//            alignment: Alignment.topRight,
-//            child: Hero(
-//              tag: 'flutter logo',
-//              child: FlutterLogo(
-//                size: 100.0,
-//              ),
-//            ),
-//          ),
-//          Align(
-//            alignment: Alignment.bottomLeft,
-//            child: Hero(
-//              tag: 'some logo',
-//              child: Icon(
-//                MdiIcons.firebase,
-//                size: 100.0,
-//                color: Colors.yellow,
-//              ),
-//            ),
-//          ),
-//        ],
-//      ),
+    //  body: new  Hero(
+    //          tag: 'flutter logo',
+    //          child: FlutterLogo(
+    //            size: 100.0,
+    //          ),
+    //        ),
       //TODO:[2] Your hero needs to fly, navigate to another screen
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
-//          Navigator.of(context).push(
-//            MaterialPageRoute(
-//              builder: (BuildContext context) {
-//                return SecondaryPage(
-//                  title: 'Secondary Page',
-//                );
-//              },
-//            ),
-//          );
+        //  Navigator.of(context).push(
+        //    MaterialPageRoute(
+        //      builder: (BuildContext context) {
+        //        return SecondaryPage(
+        //          title: 'Secondary Page',
+        //        );
+        //      },
+        //    ),
+        //  );
         },
         tooltip: 'Animate',
         child: new Icon(Icons.play_arrow),
