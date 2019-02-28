@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const Duration duration = Duration(
-  milliseconds: 600,
+  milliseconds: 700,
 );
 
 class MyHomePage extends StatefulWidget {
@@ -13,6 +13,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+  //TODO:[2] Declare the required variable and initialize it in initState
 //  bool isFirstVisible;
 //
 //  @override
@@ -29,7 +30,9 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         title: new Text(widget.title),
       ),
       body: new Center(
+//TODO:[1] Declare AnimatedCrossFade and its properties        
 //        child: AnimatedCrossFade(
+        //TODO:[]Okay so, the transition seems a little bit odd lets work it out
 ////          layoutBuilder: (Widget firstChild, Key firstChildKey, Widget secondChild, Key secondChildKey,){
 ////
 ////            return Stack(
@@ -55,13 +58,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 //            duration: duration,
 //        ),
       ),
+      //TODO:[3] You'll need something to trigger your animation here it is
       floatingActionButton: new FloatingActionButton(
         onPressed: () {
 //          isFirstVisible = !isFirstVisible;
 //          setState(() {});
         },
         tooltip: 'Animate',
-        child: new Icon(Icons.add),
+        child: new Icon(Icons.play_arrow),
       ),
     );
   }
